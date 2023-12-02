@@ -62,4 +62,6 @@ Feature: Login Movies apps Application
     When login application homepage url
     When login application Navbar is displayed
     Then login application popular url
+    When login application account url
+    When login application check the url
     Then close the browser

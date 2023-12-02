@@ -144,6 +144,19 @@ public class LoginpageTest {
       }
 
   }
-  
+  @When("login application account url")
+  public void login_application_account_url() {
+      loginpage.Verifying_account();
+  }
+  @When("login application check the url")
+  public void login_application_check_the_url() {
+      String str5="https://qamoviesapp.ccbp.tech/account";
+      String str6=driver.getCurrentUrl();
+      if(str5.equals(str6)) {
+    	  System.out.println("Test case is passed");
+      }else {
+    	  System.out.println("Test case is failed");
+      }
+  }
 
 }

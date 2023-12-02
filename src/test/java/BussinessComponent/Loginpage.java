@@ -59,6 +59,9 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//ul[@class='nav-menu-list']/li/a[contains(text(),'Popular')]")
 	public WebElement Popular;
 	
+	@FindBy(xpath="//button[@class='avatar-button']/img")
+	public WebElement Account;
+	
 	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
@@ -127,6 +130,9 @@ public void Verify_popular() {
 	Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='nav-menu-list']/li/a[contains(text(),'Popular')]")));
 	Popular.click();
+}
+public void Verifying_account() {
+	Account.click();
 }
 
 }
