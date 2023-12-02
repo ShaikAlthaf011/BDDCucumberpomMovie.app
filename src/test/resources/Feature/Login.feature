@@ -30,29 +30,36 @@ Feature: Login Movies apps Application
   Scenario: login application valid username and password
     When login application Valid username and password
     Then close the browser
-    
+
   Scenario: login application HomepageTest movies this steps
-  When login application Valid username and password
-  When Login Navigate Home page text findout
-  Then close the browser
-  
+    When login application Valid username and password
+    When Login Navigate Home page text findout
+    Then close the browser
+
   Scenario: login application HomapgeTest movie this step
-  When login application Valid username and password
-  Then login application Hompage display play button
-  Then close the browser
-  
+    When login application Valid username and password
+    Then login application Hompage display play button
+    Then close the browser
+
   Scenario: login application HomepageTest movie  apps
-  When login application Valid username and password
-  Then login application List of movies displayed
-  Then close the browser
-  
+    When login application Valid username and password
+    Then login application List of movies displayed
+    Then close the browser
+
   Scenario: login application hompage contact us
-  When login application Valid username and password
-  Then login applicstion contact us text 
-  Then close the browser
-  
-  Scenario: login application headersection
-  When login application Valid username and password
-  Then log in apllication Nav bar element Test
-  Then close the browser
-  
+    When login application Valid username and password
+    Then login applicstion contact us text
+    Then close the browser
+
+  Scenario: login application Headersection
+    When login application Valid username and password
+    Then login application logo is displayed header section
+    When login application Navbar is displayed
+    Then close the browser
+
+  Scenario: login application Headersection funcationalities
+    When login application Valid username and password
+    When login application homepage url
+    When login application Navbar is displayed
+    Then login application popular url
+    Then close the browser

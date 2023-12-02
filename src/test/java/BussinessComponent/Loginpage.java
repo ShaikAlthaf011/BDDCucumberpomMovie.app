@@ -53,6 +53,13 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//p[@class='contact-us-paragraph']")
 	public WebElement Contact;
 	
+	@FindBy(xpath="//img[@class='website-logo']")
+	public WebElement Movie;
+	
+	@FindBy(xpath="//ul[@class='nav-menu-list']/li/a[contains(text(),'Popular')]")
+	public WebElement Popular;
+	
+	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
     }
@@ -111,7 +118,15 @@ public class Loginpage extends Browser {
 	   	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='contact-us-paragraph']")));
 	  return Contact.getText();
   }
-
-	
+public boolean Verify_imageisdisplayed() {
+	Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+   	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@class='website-logo']")));
+	return Movie.isDisplayed();
+}
+public void Verify_popular() {
+	Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+   	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='nav-menu-list']/li/a[contains(text(),'Popular')]")));
+	Popular.click();
+}
 
 }

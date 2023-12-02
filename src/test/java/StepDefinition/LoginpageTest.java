@@ -115,12 +115,35 @@ public class LoginpageTest {
     	  System.out.println("Test case is failed");
       }
   }
-  @Then("log in apllication Nav bar element Test")
-  public void log_in_apllication_nav_bar_element_test() {
-      
+  @Then("login application logo is displayed header section")
+  public void login_application_logo_is_displayed_header_section() {
+      loginpage.Verify_imageisdisplayed();
   }
+  @When("login application Navbar is displayed")
+  public void login_application_navbar_is_displayed() {
+      loginpage.Verify_popular();
+  }
+  @When("login application homepage url")
+  public void login_application_homepage_url() {
+      String str1="https://qamoviesapp.ccbp.tech/";
+      String str2=driver.getCurrentUrl();
+      if(str1.equals(str2)) {
+    	  System.out.println("Test case is passed");
+      }else {
+    	  System.out.println("Test case is failed");
+      }
+  }
+  @Then("login application popular url")
+  public void login_application_popular_url() {
+      String str2="https://qamoviesapp.ccbp.tech/popular";
+      String str3=driver.getCurrentUrl();
+      if(str2.equals(str3)) {
+    	  System.out.println("Test case is passed");
+      }else {
+    	  System.out.println("Test case is Failed");
+      }
 
-
+  }
   
 
 }
