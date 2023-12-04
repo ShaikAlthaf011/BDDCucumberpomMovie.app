@@ -65,3 +65,32 @@ Feature: Login Movies apps Application
     When login application account url
     When login application check the url
     Then close the browser
+    
+  Scenario: login application popularpageTest
+  When login application Valid username and password
+  When login application Navbar is displayed
+  When login application popular movies Verify displayed
+  Then close the browser
+  
+  Scenario: login application SearchTestFuncationality
+  When login application Valid username and password
+  When login application Search icon click button
+  When login application Search Test movies name count 
+  When Login application movies Count
+  When login Click on the button another movies
+  Then close the browser
+  
+  Scenario: login application Movies details page
+  When login application Valid username and password
+  When login application Check Home movie details
+  When login application click the popular button
+  Then login application Check popular movie details
+  Then close the browser
+  
+  Scenario: ligin application Movies App acount details
+  When login application Valid username and password
+  When login application popular 
+  Then login application account
+  Then login application Test the Heading
+  Then login application Test page title 
+  Then close the browser

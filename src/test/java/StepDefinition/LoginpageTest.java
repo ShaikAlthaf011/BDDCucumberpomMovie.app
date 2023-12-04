@@ -1,11 +1,19 @@
 package StepDefinition;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Browserconfiguration.Browser;
 import BussinessComponent.Loginpage;
+import dev.failsafe.internal.util.Durations;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -125,13 +133,8 @@ public class LoginpageTest {
   }
   @When("login application homepage url")
   public void login_application_homepage_url() {
-      String str1="https://qamoviesapp.ccbp.tech/";
-      String str2=driver.getCurrentUrl();
-      if(str1.equals(str2)) {
-    	  System.out.println("Test case is passed");
-      }else {
-    	  System.out.println("Test case is failed");
-      }
+	  String str8=driver.getPageSource();
+	  System.out.println(str8);
   }
   @Then("login application popular url")
   public void login_application_popular_url() {
@@ -158,5 +161,66 @@ public class LoginpageTest {
     	  System.out.println("Test case is failed");
       }
   }
+  @When("login application popular movies Verify displayed")
+  public void login_application_popular_movies_verify_displayed() {
+      loginpage.Verifying_popular_movies();
+  }
+  @When("login application Search icon click button")
+  public void login_application_search_icon_click_button() {
+      loginpage.searchicon();
+  }
+  @When("login application Search Test movies name count")
+  public void login_application_search_test_movies_name_count() {
+      loginpage.Search_input();
+  }
+  @When("Login application movies Count")
+  public void login_application_movies_count() {
+      loginpage.venom();
+      
+  }
+  @When("login Click on the button another movies")
+  public void login_click_on_the_button_another_movies() {
+	  loginpage.Verifying_image_venom_background();
+     loginpage.Verifying_movies_displayed();
+  }
+  @When("login application Check Home movie details")
+  public void login_application_check_home_movie_details() {
+      loginpage.Verfying_hompage_list();
+  }
+  @When("login application click the popular button")
+  public void login_application_click_the_popular_button() {
+      loginpage.POPULAR_CLICK();
+  }
+  @Then("login application Check popular movie details")
+  public void login_application_check_popular_movie_details() {
+      loginpage.Listofpopularmovies();
 
+  }
+  @When("login application popular")
+  public void login_application_popular() {
+      loginpage.Verifying_popular_click();
+  }
+  @Then("login application account")
+  public void login_application_account() {
+      loginpage.verifying_account_page();
+  }
+  @Then("login application Test the Heading")
+  public void login_application_test_the_heading() {
+      loginpage.verify_acount_heading();
+  }
+  @Then("login application Test page title")
+  public void login_application_test_page_title() {
+      String str7="https://qamoviesapp.ccbp.tech/account";
+      String str8=driver.getCurrentUrl();
+      if(str7.equals(str8)) {
+    	  System.out.println("Test case is passed");
+      }else {
+    	  System.out.println("Test case is Failed");
+      }
+      String str=driver.getTitle();
+      System.out.println(str);
+      String str2=driver.getPageSource();
+      System.out.println(str2);
+      
+  }
 }

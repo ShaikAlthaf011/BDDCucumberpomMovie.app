@@ -62,6 +62,41 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//button[@class='avatar-button']/img")
 	public WebElement Account;
 	
+	@FindBy(xpath="//div[@class='search-movies-container']/li")
+	public List<WebElement> Movies_popular;
+	
+	@FindBy(xpath="//button[@data-testid='searchButton']")
+	public WebElement Search_icon;
+	
+	@FindBy(xpath="//input[@id='search']")
+	public WebElement Search;
+	
+	@FindBy(xpath="//ul[@class='search-movies-container']/li[2]/a/img")
+	public WebElement Venom;
+	
+	@FindBy(xpath="//div[@id='root']/div/div[@class='medium-screen-movie-container']")
+	public WebElement Background_image;
+	
+	@FindBy(xpath="//ul[@class='similar-movies-list-container']/li")
+	public List<WebElement> Listofmovies;
+	
+	@FindBy(xpath="//div[@class='react-slick-item']")
+	public List<WebElement> Home_list;
+	
+	@FindBy(xpath="//*[@id='root']/div/div[1]/nav/div[1]/ul/li[2]/a")
+	public WebElement Popular_list;
+	
+	@FindBy(xpath="//div[@class='search-movies-container']/li")
+	public List<WebElement> List_of_movies;
+	
+	@FindBy(xpath="//*[@id='root']/div/div[1]/nav/div[1]/ul/li[2]/a")
+	public WebElement CLICK_POPULAR;
+	
+	@FindBy(xpath="//*[@id='root']/div/nav/div[2]/button[2]/img")
+	public WebElement icon;
+	
+	@FindBy(xpath="//h1[@class='account-heading']")
+	public WebElement Text_account;
 	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
@@ -134,5 +169,61 @@ public void Verify_popular() {
 public void Verifying_account() {
 	Account.click();
 }
-
+public void Verifying_popular_movies() {
+	for(WebElement S:Movies_popular) {
+		S.isDisplayed();
+	}
+}
+public void searchicon() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@data-testid='searchButton']")));
+	Search_icon.click();
+}
+public void Search_input() {
+	Search.sendKeys("Venom");
+	Search_icon.click();
+}
+public void venom() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='search-movies-container']/li[2]/a/img")));
+	Venom.click();
+}
+public void Verifying_image_venom_background() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='root']/div/div[@class='medium-screen-movie-container']")));
+	Background_image.isDisplayed();
+}
+public void Verifying_movies_displayed() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@class='similar-movies-list-container']/li")));
+	for(WebElement S:Listofmovies) {
+		S.isDisplayed();
+	}
+}
+public void Verfying_hompage_list() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='react-slick-item']")));
+	for(WebElement S1:Home_list) {
+		S1.isDisplayed();
+	}
+}
+public void POPULAR_CLICK() {
+	Popular_list.click();
+}
+public void Listofpopularmovies() {
+	for(WebElement S3:List_of_movies) {
+		S3.isDisplayed();
+	}
+}
+public void Verifying_popular_click() {
+	Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='root']/div/div[1]/nav/div[1]/ul/li[2]/a")));
+	CLICK_POPULAR.click();
+}
+public void verifying_account_page() {
+	icon.click();
+}
+public String  verify_acount_heading() {
+	return Text_account.getText();
+}
 }
