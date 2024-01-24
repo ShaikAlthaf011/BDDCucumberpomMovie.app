@@ -1,14 +1,14 @@
 Feature: Login Movies apps Application
 
   Background: 
-    Given First login url movies application
+    Given Navigate to movies application
 
-  Scenario: login to movies application
-    When login Website logo is displayed
-    When login application Heading Text
-    Then login application label username text
-    Then login application label password text
-    Then login application click on the button
+  Scenario:  verify login functionality  of movies application
+    When Verify user landed on the movieapp homepage
+    When Verify login heading in the login page
+    Then Verify username label is displayed
+    Then Verify password label is displayed
+    Then click on the login button in the login page 
     Then close the browser
 
   Scenario: login application to movie App
@@ -65,32 +65,32 @@ Feature: Login Movies apps Application
     When login application account url
     When login application check the url
     Then close the browser
-    
+
   Scenario: login application popularpageTest
-  When login application Valid username and password
-  When login application Navbar is displayed
-  When login application popular movies Verify displayed
-  Then close the browser
-  
+    When login application Valid username and password
+    When login application Navbar is displayed
+    When login application popular movies Verify displayed
+    Then close the browser
+
   Scenario: login application SearchTestFuncationality
-  When login application Valid username and password
-  When login application Search icon click button
-  When login application Search Test movies name count 
-  When Login application movies Count
-  When login Click on the button another movies
-  Then close the browser
-  
+    When login application Valid username and password
+    When login application Search icon click button
+    When login application Search Test movies name count
+    When Login application movies Count
+    When login Click on the button another movies
+    Then close the browser
+
   Scenario: login application Movies details page
-  When login application Valid username and password
-  When login application Check Home movie details
-  When login application click the popular button
-  Then login application Check popular movie details
-  Then close the browser
-  
+    When login application Valid username and password
+    When login application Check Home movie details
+    When login application click the popular button
+    Then login application Check popular movie details
+    Then close the browser
+
   Scenario: ligin application Movies App acount details
-  When login application Valid username and password
-  When login application popular 
-  Then login application account
-  Then login application Test the Heading
-  Then login application Test page title 
-  Then close the browser
+    When login application Valid username and password
+    When login application popular
+    Then login application account
+    Then login application Test the Heading
+    Then login application Test page title
+    Then close the browser

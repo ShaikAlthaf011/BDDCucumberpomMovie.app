@@ -22,19 +22,19 @@ public class LoginpageTest {
   Loginpage loginpage;
   public static  WebDriver driver;
   @Test
-  @Given("First login url movies application")
-  public void first_login_url_movies_application() {
+  @Given("Navigate to movies application")
+  public void Navigate_to_movies_application() {
 	  driver= new ChromeDriver();
 	  driver.get("https://qamoviesapp.ccbp.tech");
 	  driver.manage().window().maximize();
       loginpage=new Loginpage(driver);
   }
-  @When("login Website logo is displayed")
-  public void login_website_logo_is_displayed() {
+  @When("Verify user landed on the movieapp homepage")
+  public void Verify_user_landed_onthe_movieapp_homepage() {
       loginpage.Displayed(loginpage.logoisdisplayed);
   }
-  @When("login application Heading Text")
-  public void login_application_heading_text() {
+  @When("Verify login heading in the login page")
+  public void Verify_login_heading_inthe_loginpage() {
       String str1=loginpage.heading_text();
       String str2="Login";
       if(str1.equals(str2)) {
@@ -43,8 +43,8 @@ public class LoginpageTest {
     	  System.out.println("Test is Failed");
       }
   }
-  @Then("login application label username text")
-  public void login_application_label_username_text() {
+  @Then("Verify username label is displayed")
+  public void Verify_usernamelabel_is_displayed() {
       String str3=loginpage.labelusername_text();
       String str4="USERNAME";
       if(str3.equals(str4)) {
@@ -53,8 +53,8 @@ public class LoginpageTest {
     	  System.out.println("Test case is Failed");
       }
   }
-  @Then("login application label password text")
-  public void login_application_label_password_text() {
+  @Then("Verify password label is displayed")
+  public void Verify_passwordlabel_is_displayed() {
       // Write code here that turns the phrase above into concrete actions
 	  String str1=loginpage.password_text();
 	  String str2="PASSWORD";
@@ -64,8 +64,8 @@ public class LoginpageTest {
 		  System.out.println("Test case is Failed");
 	  }
     }
-  @Then("login application click on the button")
-  public void login_application_click_on_the_button() {
+  @Then("click on the login button in the login page")
+  public void click_on_thelogin_button_inthe_loginpage() {
       loginpage.Button();
 
   }
