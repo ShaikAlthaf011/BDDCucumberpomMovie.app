@@ -64,9 +64,9 @@ public class LoginpageTest {
 		  System.out.println("Test case is Failed");
 	  }
     }
-  @Then("click on the login button in the login page")
+  @Then("click on thelogin button in the login page")
   public void click_on_thelogin_button_inthe_loginpage() {
-      loginpage.Button();
+      loginpage.click_onthe_button();
 
   }
   @When("close the browser")
@@ -74,25 +74,26 @@ public class LoginpageTest {
 	 driver.quit();
 	  
   }
-  @When("login application empty input field")
+  @When("Verify empty input fields in the login page")
   public void login_application_empty_input_field() {
-      loginpage.Button();
+      loginpage.click_onthe_button();
   
   }
-  @Then("login application empty username")
-  public void login_application_empty_username() {
+  @Then("Verify empty username input field")
+  public void Verify_emptyusername_inputfield() {
       loginpage.Password();
-      loginpage.Button();
+      loginpage.click_onthe_button();
   }
-  @When("login application empty password")
+  @When("Verify empty password input field")
   public void login_application_empty_password() {
       loginpage.username();
-      loginpage.Button();
+      loginpage.click_onthe_button();
       
   }
-  @Then("login application Invalid username and password")
+  @Then("verify the Invalid username and password text is displayed")
   public void login_application_invalid_username_and_password() {
       loginpage.InvalidCredential();
+      
       
   }
   @When("login application Valid username and password")

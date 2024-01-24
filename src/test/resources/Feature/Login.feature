@@ -3,28 +3,28 @@ Feature: Login Movies apps Application
   Background: 
     Given Navigate to movies application
 
-  Scenario:  verify login functionality  of movies application
+  Scenario: verify login functionality  of movies application
     When Verify user landed on the movieapp homepage
     When Verify login heading in the login page
     Then Verify username label is displayed
     Then Verify password label is displayed
-    Then click on the login button in the login page 
+    Then click on thelogin button in the login page
     Then close the browser
 
   Scenario: login application to movie App
-    When login application empty input field
+    When Verify empty input fields in the login page
     Then close the browser
 
   Scenario: Application login funcationality
-    Then login application empty username
+    Then Verify empty username input field
     Then close the browser
 
   Scenario: login application without password
-    When login application empty password
+    When Verify empty password input field
     Then close the browser
 
   Scenario: login application Invalid username and password
-    Then login application Invalid username and password
+    Then verify the Invalid username and password text is displayed
     Then close the browser
 
   Scenario: login application valid username and password

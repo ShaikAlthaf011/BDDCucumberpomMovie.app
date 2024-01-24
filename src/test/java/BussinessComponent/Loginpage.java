@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import Browserconfiguration.Browser;
 
@@ -98,6 +99,9 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//h1[@class='account-heading']")
 	public WebElement Text_account;
 	
+	@FindBy(xpath="//p[@class='error-message']")
+	public WebElement errormessage; 
+	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
     }
@@ -112,7 +116,7 @@ public class Loginpage extends Browser {
     public String password_text() {
     	return password.getText();
     }
-    public void Button() {
+    public void click_onthe_button() {
     	button.click();
     }
     public void Password() {
@@ -125,6 +129,10 @@ public class Loginpage extends Browser {
     	username_input.sendKeys("althaf");
     	password_input.sendKeys("rahul@2021");
     	button.click();
+    	Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='error-message']")));
+    boolean flag=errormessage.isDisplayed();
+    Assert.assertEquals(flag, true);
     }
     public void ValidCredential() {
     	username_input.sendKeys("rahul");
