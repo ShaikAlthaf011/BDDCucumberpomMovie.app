@@ -105,6 +105,12 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//img[@class='poster']")
 	public List<WebElement> movie_cards; 
 	
+	@FindBy(xpath="//div[@class='membership-container']/p[@class='membership-heading']")
+	public WebElement membership_heading;
+	
+	@FindBy(xpath="//div[@class='plan-container']/p[@class='membership-heading']")
+	public WebElement plan_details;
+	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
     }
@@ -242,6 +248,20 @@ public String  verify_acount_heading() {
 }
 
  public void movie_card() {
-	 movie_cards.get(0).isDisplayed();
+	for(WebElement S:movie_cards) {
+		S.isDisplayed();
+	}
+ }
+ public void gettextmembership() {
+	 String str1=membership_heading.getText();
+	 String str2="Member ship";
+	 Assert.assertEquals(str1, str2,"Text is Mismatched");
+ }
+ public void getplandetals() {
+	 Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='plan-container']/p[@class='membership-heading']")));
+	 String str1=plan_details.getText();
+	 String str2="Plan details";
+	 Assert.assertEquals(str1,str2,"Text is MisMatched");
  }
 }

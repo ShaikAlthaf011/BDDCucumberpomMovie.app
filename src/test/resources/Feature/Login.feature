@@ -33,7 +33,7 @@ Feature: Login Movies apps Application
 
   Scenario: login application HomepageTest movies this steps
     When Enter Valid username and password and click on the login button
-    When Verify user navigated to Homepage 
+    When Verify user navigated to Homepage
     Then close the browser
 
   Scenario: login application HomapgeTest movie this step
@@ -61,7 +61,6 @@ Feature: Login Movies apps Application
     When Enter Valid username and password and click on the login button
     When Verify homepage url
     When Verify Movies Banner is displayed
-    Then Verify popular page url
     When Verify account page url
     When Verify User Profile page url
     Then close the browser
@@ -87,10 +86,18 @@ Feature: Login Movies apps Application
     Then Verify and Check the popular movie details
     Then close the browser
 
-  Scenario: ligin application Movies App acount details
+  Scenario: login application Movies App acount details
     When Enter Valid username and password and click on the login button
     When Veriify navigate popular page
     Then verify navigate profile page
     Then Verify navigate profile page get heading Text
     Then verify profile page title
+    Then close the browser
+
+  Scenario: login application Movies profile page
+    When Enter Valid username and password and click on the login button
+    When Veriify navigate popular page
+    Then verify navigate profile page
+    When Verify profile login page text membership heading
+    Then Verify prigile login page plan detail heading
     Then close the browser

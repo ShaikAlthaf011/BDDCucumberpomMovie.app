@@ -136,17 +136,7 @@ public class LoginpageTest {
 	  String str8=driver.getPageSource();
 	  System.out.println(str8);
   }
-  @Then("Verify popular page url")
-  public void Verify_popular_page_url() {
-      String str2="https://qamoviesapp.ccbp.tech/popular";
-      String str3=driver.getCurrentUrl();
-      if(str2.equals(str3)) {
-    	  System.out.println("Test case is passed");
-      }else {
-    	  System.out.println("Test case is Failed");
-      }
-
-  }
+  
   @When("Verify account page url")
   public void Verify_account_page_url() {
       loginpage.Verifying_account();
@@ -206,17 +196,21 @@ public class LoginpageTest {
   }
   @Then("verify profile page title")
   public void verify_profile_page_title() {
+      Wait<WebDriver>wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+      wait.until(ExpectedConditions.urlToBe("https://qamoviesapp.ccbp.tech/account"));
       String str7="https://qamoviesapp.ccbp.tech/account";
       String str8=driver.getCurrentUrl();
-      if(str7.equals(str8)) {
-    	  System.out.println("Test case is passed");
-      }else {
-    	  System.out.println("Test case is Failed");
-      }
-      String str=driver.getTitle();
-      System.out.println(str);
-      String str2=driver.getPageSource();
-      System.out.println(str2);
-      
+      Assert.assertEquals(str7,str8,"is url mismatch");
+     
   }
+
+@When("Verify profile login page text membership heading")
+public void verify_profile_login_page_text_membership_heading() {
+    loginpage.gettextmembership();
+    
+}
+@Then("Verify prigile login page plan detail heading")
+public void verify_prigile_login_page_plan_detail_heading() {
+   loginpage.getplandetals(); 
+}
 }
