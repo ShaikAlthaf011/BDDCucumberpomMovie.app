@@ -96,26 +96,25 @@ public class LoginpageTest {
       
       
   }
-  @When("login application Valid username and password")
-  public void login_application_valid_username_and_password() {
+  @When("Enter Valid username and password and click on the login button")
+  public void Enter_Valid_username_and_password() {
       loginpage.ValidCredential();
   
   }
-  @When("Login Navigate Home page text findout")
+  @When("Verify user navigated to Homepage")
   public void login_navigate_home_page_text_findout() {
-      
-      loginpage.heading_text();
+      loginpage.movie_card();
   }
-  @Then("login application Hompage display play button")
+  @Then("Verify play button is displayed in moviesapp homepage")
   public void login_application_hompage_display_play_button() {
      loginpage.display_paly_button();
   }
-  @Then("login application List of movies displayed")
+  @Then("verify List of movies card are displayed")
   public void login_application_list_of_movies_displayed() {
       loginpage.Moviesdisplayedhompage();
   }
-  @Then("login applicstion contact us text")
-  public void login_applicstion_contact_us_text() {
+  @Then("Verify contact button text is displayed are not")
+  public void Verify_contact_button_text_is_displayed_are_not() {
       String str1=loginpage.Verify_contact();
       String str2="Contact Us";
       if(str1.equals(str2)) {
@@ -124,21 +123,21 @@ public class LoginpageTest {
     	  System.out.println("Test case is failed");
       }
   }
-  @Then("login application logo is displayed header section")
-  public void login_application_logo_is_displayed_header_section() {
+  @Then("Verify Movies Banner is displayed")
+  public void Verify_Movies_Banner_is_displayed() {
       loginpage.Verify_imageisdisplayed();
   }
-  @When("login application Navbar is displayed")
-  public void login_application_navbar_is_displayed() {
+  @When("Verify Navbar is displayed")
+  public void verify_navbar_is_displayed() {
       loginpage.Verify_popular();
   }
-  @When("login application homepage url")
-  public void login_application_homepage_url() {
+  @When("Verify homepage url")
+  public void Verify_homepage_url() {
 	  String str8=driver.getPageSource();
 	  System.out.println(str8);
   }
-  @Then("login application popular url")
-  public void login_application_popular_url() {
+  @Then("Verify popular page url")
+  public void Verify_popular_page_url() {
       String str2="https://qamoviesapp.ccbp.tech/popular";
       String str3=driver.getCurrentUrl();
       if(str2.equals(str3)) {
@@ -148,69 +147,65 @@ public class LoginpageTest {
       }
 
   }
-  @When("login application account url")
-  public void login_application_account_url() {
+  @When("Verify account page url")
+  public void Verify_account_page_url() {
       loginpage.Verifying_account();
   }
-  @When("login application check the url")
-  public void login_application_check_the_url() {
+  @When("Verify User Profile page url")
+  public void Verify_User_Profile_page_url() {
       String str5="https://qamoviesapp.ccbp.tech/account";
       String str6=driver.getCurrentUrl();
-      if(str5.equals(str6)) {
-    	  System.out.println("Test case is passed");
-      }else {
-    	  System.out.println("Test case is failed");
-      }
+      Assert.assertEquals(str5, str6,"Utl Is not Matched");
   }
-  @When("login application popular movies Verify displayed")
-  public void login_application_popular_movies_verify_displayed() {
+  @When("Verify the popular movies is displayed")
+  public void Verify_the_popular_movies_is_displayed() {
       loginpage.Verifying_popular_movies();
   }
-  @When("login application Search icon click button")
-  public void login_application_search_icon_click_button() {
+  @When("Verify Click on the button")
+  public void Verify_Click_on_the_button() {
       loginpage.searchicon();
   }
-  @When("login application Search Test movies name count")
-  public void login_application_search_test_movies_name_count() {
+  @When("Verify movies name count")
+  public void Verify_movies_name_count() {
       loginpage.Search_input();
   }
-  @When("Login application movies Count")
-  public void login_application_movies_count() {
+  @When("Verify movies Count")
+  public void Verify_movies_Count() {
       loginpage.venom();
       
   }
-  @When("login Click on the button another movies")
-  public void login_click_on_the_button_another_movies() {
+  @When("verify the Navigate another page")
+  public void verify_the_Navigate_another_page() {
 	  loginpage.Verifying_image_venom_background();
      loginpage.Verifying_movies_displayed();
   }
-  @When("login application Check Home movie details")
-  public void login_application_check_home_movie_details() {
+  @When("Verify Check Movie Home Page details")
+  public void Verify_Check_Movie_Home_Page_detailS() {
       loginpage.Verfying_hompage_list();
   }
-  @When("login application click the popular button")
-  public void login_application_click_the_popular_button() {
+  @When("verify click on the button popular page")
+  public void verify_click_on_the_button_popular_page() {
       loginpage.POPULAR_CLICK();
   }
-  @Then("login application Check popular movie details")
-  public void login_application_check_popular_movie_details() {
+  @Then("Verify and Check the popular movie details")
+  public void Verify_and_Check_the_popular_movie_details() {
       loginpage.Listofpopularmovies();
 
   }
-  @When("login application popular")
-  public void login_application_popular() {
+  @When("Veriify navigate popular page")
+  public void Veriify_navigate_popular_page() {
       loginpage.Verifying_popular_click();
   }
-  @Then("login application account")
-  public void login_application_account() {
+  @Then("verify navigate profile page")
+  public void verify_navigate_profile_page() {
       loginpage.verifying_account_page();
   }
-  @Then("login application Test the Heading")
-  public void login_application_test_the_heading() {
+  @Then("Verify navigate profile page get heading Text")
+  public void Verify_navigate_profile_page_get_heading_Text() {
       loginpage.verify_acount_heading();
   }
-  @Then("login application Test page title")
-  public void login_application_test_page_title() {
+  @Then("verify profile page title")
+  public void verify_profile_page_title() {
       String str7="https://qamoviesapp.ccbp.tech/account";
       String str8=driver.getCurrentUrl();
       if(str7.equals(str8)) {

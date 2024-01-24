@@ -102,6 +102,9 @@ public class Loginpage extends Browser {
 	@FindBy(xpath="//p[@class='error-message']")
 	public WebElement errormessage; 
 	
+	@FindBy(xpath="//img[@class='poster']")
+	public List<WebElement> movie_cards; 
+	
     public boolean Displayed( WebElement element ) {
     	return element.isDisplayed();
     }
@@ -137,8 +140,11 @@ public class Loginpage extends Browser {
     public void ValidCredential() {
     	username_input.sendKeys("rahul");
     	password_input.sendKeys("rahul@2021");
-    	button.click();
+    	click_on_loginpage();
     }
+     public void click_on_loginpage() {
+    	 button.click();
+     }
     public void Hompage_heading() {
     	Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//h1[@class='movies-list-heading']")));
@@ -234,4 +240,8 @@ public void verifying_account_page() {
 public String  verify_acount_heading() {
 	return Text_account.getText();
 }
+
+ public void movie_card() {
+	 movie_cards.get(0).isDisplayed();
+ }
 }

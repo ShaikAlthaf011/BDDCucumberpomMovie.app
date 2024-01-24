@@ -28,69 +28,69 @@ Feature: Login Movies apps Application
     Then close the browser
 
   Scenario: login application valid username and password
-    When login application Valid username and password
+    When Enter Valid username and password and click on the login button
     Then close the browser
 
   Scenario: login application HomepageTest movies this steps
-    When login application Valid username and password
-    When Login Navigate Home page text findout
+    When Enter Valid username and password and click on the login button
+    When Verify user navigated to Homepage 
     Then close the browser
 
   Scenario: login application HomapgeTest movie this step
-    When login application Valid username and password
-    Then login application Hompage display play button
+    When Enter Valid username and password and click on the login button
+    Then Verify play button is displayed in moviesapp homepage
     Then close the browser
 
   Scenario: login application HomepageTest movie  apps
-    When login application Valid username and password
-    Then login application List of movies displayed
+    When Enter Valid username and password and click on the login button
+    Then verify List of movies card are displayed
     Then close the browser
 
   Scenario: login application hompage contact us
-    When login application Valid username and password
-    Then login applicstion contact us text
+    When Enter Valid username and password and click on the login button
+    Then Verify contact button text is displayed are not
     Then close the browser
 
   Scenario: login application Headersection
-    When login application Valid username and password
-    Then login application logo is displayed header section
-    When login application Navbar is displayed
+    When Enter Valid username and password and click on the login button
+    Then Verify Movies Banner is displayed
+    When Verify Navbar is displayed
     Then close the browser
 
   Scenario: login application Headersection funcationalities
-    When login application Valid username and password
-    When login application homepage url
-    When login application Navbar is displayed
-    Then login application popular url
-    When login application account url
-    When login application check the url
+    When Enter Valid username and password and click on the login button
+    When Verify homepage url
+    When Verify Movies Banner is displayed
+    Then Verify popular page url
+    When Verify account page url
+    When Verify User Profile page url
     Then close the browser
 
   Scenario: login application popularpageTest
-    When login application Valid username and password
-    When login application Navbar is displayed
-    When login application popular movies Verify displayed
+    When Enter Valid username and password and click on the login button
+    When Verify Movies Banner is displayed
+    When Verify the popular movies is displayed
     Then close the browser
 
   Scenario: login application SearchTestFuncationality
-    When login application Valid username and password
-    When login application Search icon click button
-    When login application Search Test movies name count
-    When Login application movies Count
-    When login Click on the button another movies
+    When Enter Valid username and password and click on the login button
+    When Verify Click on the button
+    When Verify movies name count
+    When Verify movies Count
+    When verify the Navigate another page
     Then close the browser
 
   Scenario: login application Movies details page
-    When login application Valid username and password
-    When login application Check Home movie details
-    When login application click the popular button
-    Then login application Check popular movie details
+    When Enter Valid username and password and click on the login button
+    When Verify Check Movie Home Page details
+    When verify click on the button popular page
+    Then Verify and Check the popular movie details
     Then close the browser
 
   Scenario: ligin application Movies App acount details
-    When login application Valid username and password
-    When login application popular
-    Then login application account
-    Then login application Test the Heading
-    Then login application Test page title
+    When Enter Valid username and password and click on the login button
+    When Veriify navigate popular page
+    Then verify navigate profile page
+    Then Verify navigate profile page get heading Text
+    Then verify profile page title
     Then close the browser
