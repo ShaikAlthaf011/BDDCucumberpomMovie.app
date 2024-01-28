@@ -211,6 +211,6 @@ public void verify_profile_login_page_text_membership_heading() {
 }
 @Then("Verify prigile login page plan detail heading")
 public void verify_prigile_login_page_plan_detail_heading() {
-   loginpage.getplandetals(); 
+   loginpage.getplandetals();  
 }
 }
